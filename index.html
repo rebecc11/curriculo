@@ -1,0 +1,1825 @@
+<!DOCTYPE html> <html lang="pt-BR"> <head>
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Portfólio | Steve Jobs
+</title>
+
+<style>
+
+    /* ========================================
+       CONFIGURAÇÕES GERAIS
+    ======================================== */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    :root {
+
+        --fundo: #080b14;
+
+        --fundo-secundario: #0d1220;
+
+        --card: #111827;
+
+        --branco: #f8fafc;
+
+        --texto: #cbd5e1;
+
+        --cinza: #8994a7;
+
+        --roxo: #8b5cf6;
+
+        --azul: #38bdf8;
+
+        --borda: rgba(255, 255, 255, 0.1);
+
+    }
+
+    body {
+
+        font-family:
+            Arial,
+            Helvetica,
+            sans-serif;
+
+        background: var(--fundo);
+
+        color: var(--branco);
+
+        line-height: 1.6;
+
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .container {
+
+        width: 90%;
+
+        max-width: 1100px;
+
+        margin: 0 auto;
+
+    }
+
+    .secao {
+
+        padding: 90px 0;
+
+    }
+
+    .titulo-secao {
+
+        font-size: 38px;
+
+        margin-bottom: 15px;
+
+    }
+
+    .titulo-secao span {
+
+        color: var(--roxo);
+
+    }
+
+    .subtitulo {
+
+        color: var(--cinza);
+
+        margin-bottom: 40px;
+
+    }
+
+    /* ========================================
+       MENU
+    ======================================== */
+
+    header {
+
+        position: sticky;
+
+        top: 0;
+
+        z-index: 1000;
+
+        background:
+            rgba(8, 11, 20, 0.9);
+
+        border-bottom:
+            1px solid var(--borda);
+
+        backdrop-filter:
+            blur(15px);
+
+    }
+
+    .navbar {
+
+        min-height: 75px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+    }
+
+    .logo {
+
+        font-size: 21px;
+
+        font-weight: bold;
+
+    }
+
+    .logo span {
+
+        color: var(--roxo);
+
+    }
+
+    .menu {
+
+        display: flex;
+
+        gap: 25px;
+
+        list-style: none;
+
+    }
+
+    .menu a {
+
+        color: var(--cinza);
+
+        font-size: 14px;
+
+        transition: 0.3s;
+
+    }
+
+    .menu a:hover {
+
+        color: white;
+
+    }
+
+    /* ========================================
+       HERO
+    ======================================== */
+
+    .hero {
+
+        min-height:
+            calc(100vh - 75px);
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 80px 20px;
+
+        background:
+
+            radial-gradient(
+                circle at center,
+                rgba(139, 92, 246, 0.15),
+                transparent 45%
+            );
+
+    }
+
+    .hero-conteudo {
+
+        max-width: 800px;
+
+    }
+
+    .badge {
+
+        display: inline-block;
+
+        padding: 7px 15px;
+
+        border:
+            1px solid
+            rgba(139, 92, 246, 0.4);
+
+        border-radius: 30px;
+
+        color: #c4b5fd;
+
+        background:
+            rgba(139, 92, 246, 0.1);
+
+        font-size: 13px;
+
+        margin-bottom: 25px;
+
+    }
+
+    .foto-perfil {
+
+        width: 140px;
+
+        height: 140px;
+
+        object-fit: cover;
+
+        border-radius: 50%;
+
+        border:
+            4px solid
+            var(--roxo);
+
+        margin-bottom: 25px;
+
+        box-shadow:
+            0 0 30px
+            rgba(139, 92, 246, 0.3);
+
+    }
+
+    .hero h1 {
+
+        font-size:
+            clamp(42px, 7vw, 70px);
+
+        line-height: 1.1;
+
+        margin-bottom: 20px;
+
+    }
+
+    .hero h1 span {
+
+        background:
+            linear-gradient(
+                90deg,
+                var(--roxo),
+                var(--azul)
+            );
+
+        -webkit-background-clip: text;
+
+        background-clip: text;
+
+        color: transparent;
+
+    }
+
+    .hero p {
+
+        color: var(--texto);
+
+        font-size: 18px;
+
+        max-width: 600px;
+
+        margin:
+            0 auto 30px;
+
+    }
+
+    /* ========================================
+       BOTÕES
+    ======================================== */
+
+    .botoes {
+
+        display: flex;
+
+        justify-content: center;
+
+        gap: 12px;
+
+        flex-wrap: wrap;
+
+    }
+
+    .botao {
+
+        display: inline-block;
+
+        padding: 12px 23px;
+
+        border: none;
+
+        border-radius: 10px;
+
+        background:
+            linear-gradient(
+                135deg,
+                var(--roxo),
+                #6d28d9
+            );
+
+        color: white;
+
+        font-weight: bold;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+
+    }
+
+    .botao:hover {
+
+        transform:
+            translateY(-3px);
+
+        box-shadow:
+            0 8px 20px
+            rgba(139, 92, 246, 0.25);
+
+    }
+
+    .botao-secundario {
+
+        background: transparent;
+
+        border:
+            1px solid
+            var(--borda);
+
+    }
+
+    .botao-secundario:hover {
+
+        background:
+            rgba(255, 255, 255, 0.05);
+
+    }
+
+    /* ========================================
+       SOBRE
+    ======================================== */
+
+    .sobre {
+
+        background:
+            var(--fundo-secundario);
+
+        border-top:
+            1px solid var(--borda);
+
+        border-bottom:
+            1px solid var(--borda);
+
+    }
+
+    .sobre-grid {
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 60px;
+
+        align-items: center;
+
+    }
+
+    .sobre-texto p {
+
+        color: var(--texto);
+
+        font-size: 17px;
+
+        margin-bottom: 15px;
+
+    }
+
+    .destaques {
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 15px;
+
+    }
+
+    .destaque {
+
+        background: var(--card);
+
+        border:
+            1px solid var(--borda);
+
+        border-radius: 15px;
+
+        padding: 25px;
+
+        transition: 0.3s;
+
+    }
+
+    .destaque:hover {
+
+        transform:
+            translateY(-5px);
+
+        border-color:
+            var(--roxo);
+
+    }
+
+    .numero {
+
+        display: block;
+
+        color: var(--roxo);
+
+        font-size: 30px;
+
+        font-weight: bold;
+
+    }
+
+    .destaque p {
+
+        color: var(--cinza);
+
+        font-size: 14px;
+
+    }
+
+    /* ========================================
+       PROJETOS
+    ======================================== */
+
+    .projetos {
+
+        background: var(--fundo);
+
+    }
+
+    .grid-projetos {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(
+                auto-fit,
+                minmax(280px, 1fr)
+            );
+
+        gap: 25px;
+
+    }
+
+    .card {
+
+        background: var(--card);
+
+        border:
+            1px solid var(--borda);
+
+        border-radius: 16px;
+
+        overflow: hidden;
+
+        transition: 0.3s;
+
+    }
+
+    .card:hover {
+
+        transform:
+            translateY(-7px);
+
+        border-color:
+            var(--roxo);
+
+        box-shadow:
+            0 15px 35px
+            rgba(0, 0, 0, 0.2);
+
+    }
+
+    .card img {
+
+        width: 100%;
+
+        height: 200px;
+
+        object-fit: cover;
+
+        display: block;
+
+    }
+
+    .card-conteudo {
+
+        padding: 25px;
+
+    }
+
+    .tag {
+
+        display: inline-block;
+
+        padding: 5px 10px;
+
+        border-radius: 6px;
+
+        background:
+            rgba(56, 189, 248, 0.1);
+
+        color: var(--azul);
+
+        font-size: 11px;
+
+        font-weight: bold;
+
+        margin-bottom: 12px;
+
+    }
+
+    .card h3 {
+
+        font-size: 20px;
+
+        margin-bottom: 8px;
+
+    }
+
+    .card p {
+
+        color: var(--cinza);
+
+        font-size: 14px;
+
+        margin-bottom: 20px;
+
+    }
+
+    /* ========================================
+       QUALIFICAÇÕES
+    ======================================== */
+
+    .qualificacoes {
+
+        background:
+            var(--fundo-secundario);
+
+        border-top:
+            1px solid var(--borda);
+
+        border-bottom:
+            1px solid var(--borda);
+
+    }
+
+    .timeline {
+
+        max-width: 850px;
+
+        display: grid;
+
+        gap: 18px;
+
+    }
+
+    .qualificacao {
+
+        background: var(--card);
+
+        border:
+            1px solid var(--borda);
+
+        border-left:
+            4px solid var(--roxo);
+
+        border-radius: 12px;
+
+        padding: 25px;
+
+        transition: 0.3s;
+
+    }
+
+    .qualificacao:hover {
+
+        transform:
+            translateX(5px);
+
+        border-color:
+            var(--roxo);
+
+    }
+
+    .qualificacao h3 {
+
+        font-size: 19px;
+
+        margin-bottom: 5px;
+
+    }
+
+    .instituicao {
+
+        color: var(--roxo);
+
+        font-size: 14px;
+
+        margin-bottom: 8px;
+
+    }
+
+    .qualificacao p {
+
+        color: var(--cinza);
+
+        font-size: 14px;
+
+    }
+
+    /* ========================================
+       DEPOIMENTOS
+    ======================================== */
+
+    .depoimentos {
+
+        background: var(--fundo);
+
+    }
+
+    .grid-depoimentos {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(
+                auto-fit,
+                minmax(250px, 1fr)
+            );
+
+        gap: 20px;
+
+    }
+
+    .depoimento {
+
+        background: var(--card);
+
+        border:
+            1px solid var(--borda);
+
+        border-radius: 15px;
+
+        padding: 25px;
+
+        transition: 0.3s;
+
+    }
+
+    .depoimento:hover {
+
+        transform:
+            translateY(-5px);
+
+        border-color:
+            var(--roxo);
+
+    }
+
+    .aspas {
+
+        color: var(--roxo);
+
+        font-size: 35px;
+
+        line-height: 1;
+
+        margin-bottom: 10px;
+
+    }
+
+    .depoimento blockquote {
+
+        color: var(--texto);
+
+        font-style: italic;
+
+        font-size: 14px;
+
+        margin-bottom: 20px;
+
+    }
+
+    .depoimento strong {
+
+        display: block;
+
+        color: white;
+
+    }
+
+    .depoimento small {
+
+        display: block;
+
+        color: var(--cinza);
+
+        margin-top: 4px;
+
+    }
+
+    /* ========================================
+       CONTATO
+    ======================================== */
+
+    .contato {
+
+        background:
+            var(--fundo-secundario);
+
+        border-top:
+            1px solid var(--borda);
+
+    }
+
+    .contato-grid {
+
+        display: grid;
+
+        grid-template-columns:
+            0.8fr 1.2fr;
+
+        gap: 70px;
+
+        align-items: start;
+
+    }
+
+    .contato-info p {
+
+        color: var(--cinza);
+
+        max-width: 400px;
+
+        font-size: 17px;
+
+    }
+
+    .formulario {
+
+        background: var(--card);
+
+        border:
+            1px solid var(--borda);
+
+        border-radius: 15px;
+
+        padding: 30px;
+
+    }
+
+    .campo {
+
+        margin-bottom: 18px;
+
+    }
+
+    .campo label {
+
+        display: block;
+
+        color: var(--texto);
+
+        font-size: 14px;
+
+        font-weight: bold;
+
+        margin-bottom: 7px;
+
+    }
+
+    .campo input,
+    .campo textarea {
+
+        width: 100%;
+
+        padding: 13px;
+
+        background: #080b14;
+
+        color: white;
+
+        border:
+            1px solid var(--borda);
+
+        border-radius: 8px;
+
+        outline: none;
+
+        font-family: inherit;
+
+        font-size: 14px;
+
+        transition: 0.3s;
+
+    }
+
+    .campo input::placeholder,
+    .campo textarea::placeholder {
+
+        color: #64748b;
+
+    }
+
+    .campo input:focus,
+    .campo textarea:focus {
+
+        border-color:
+            var(--roxo);
+
+        box-shadow:
+            0 0 0 3px
+            rgba(139, 92, 246, 0.1);
+
+    }
+
+    .campo textarea {
+
+        min-height: 130px;
+
+        resize: vertical;
+
+    }
+
+    /* ========================================
+       RODAPÉ
+    ======================================== */
+
+    footer {
+
+        background: #05070d;
+
+        border-top:
+            1px solid var(--borda);
+
+        color: var(--cinza);
+
+        text-align: center;
+
+        padding: 35px 20px;
+
+    }
+
+    .footer-logo {
+
+        color: white;
+
+        font-size: 20px;
+
+        font-weight: bold;
+
+        margin-bottom: 8px;
+
+    }
+
+    .footer-logo span {
+
+        color: var(--roxo);
+
+    }
+
+    .redes {
+
+        display: flex;
+
+        justify-content: center;
+
+        gap: 10px;
+
+        margin-top: 20px;
+
+        flex-wrap: wrap;
+
+    }
+
+    /* ========================================
+       RESPONSIVIDADE
+    ======================================== */
+
+    @media (max-width: 850px) {
+
+        .navbar {
+
+            flex-direction: column;
+
+            padding: 18px 0;
+
+            gap: 15px;
+
+        }
+
+        .menu {
+
+            gap: 15px;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+        }
+
+        .sobre-grid {
+
+            grid-template-columns: 1fr;
+
+            gap: 40px;
+
+        }
+
+        .contato-grid {
+
+            grid-template-columns: 1fr;
+
+            gap: 40px;
+
+        }
+
+        .secao {
+
+            padding: 70px 0;
+
+        }
+
+    }
+
+    @media (max-width: 500px) {
+
+        .container {
+
+            width: 88%;
+
+        }
+
+        .menu {
+
+            gap: 10px;
+
+        }
+
+        .menu a {
+
+            font-size: 12px;
+
+        }
+
+        .hero {
+
+            padding: 70px 15px;
+
+        }
+
+        .hero h1 {
+
+            font-size: 42px;
+
+        }
+
+        .hero p {
+
+            font-size: 16px;
+
+        }
+
+        .foto-perfil {
+
+            width: 120px;
+
+            height: 120px;
+
+        }
+
+        .botoes {
+
+            flex-direction: column;
+
+            align-items: center;
+
+        }
+
+        .botoes .botao {
+
+            width: 220px;
+
+        }
+
+        .destaques {
+
+            grid-template-columns: 1fr;
+
+        }
+
+        .formulario {
+
+            padding: 20px;
+
+        }
+
+    }
+
+</style>
+
+</head> <body>
+<!-- ========================================
+     MENU
+======================================== -->
+
+<header>
+
+    <div class="container navbar">
+
+        <div class="logo">
+
+            Alexandre Costa<span>.</span>
+
+        </div>
+
+        <nav>
+
+            <ul class="menu">
+
+                <li>
+                    <a href="#hero">
+                        Início
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#sobre">
+                        Sobre
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#projetos">
+                        Projetos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#quali">
+                        Qualificações
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#depo">
+                        Depoimentos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contato">
+                        Contato
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<!-- ========================================
+     HERO
+======================================== -->
+
+<section
+    id="hero"
+    class="hero"
+>
+
+    <div class="hero-conteudo">
+
+        <span class="badge">
+
+            Disponível para novos projetos
+
+        </span>
+
+        <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8K3bP2qvEFLLwwVvnHW112ZPX_7zyCqZ8fGoebOZdw&s=10"
+            alt="Foto de perfil de Alexandre"
+            class="foto-perfil"
+        >
+
+        <h1>
+
+            Olá, eu sou
+            <span>
+                Alexandre
+            </span>.
+
+        </h1>
+
+        <p>
+
+            Desenvolvedora apaixonada por tecnologia,
+            experiências digitais e criação de soluções
+            simples para problemas complexos.
+
+        </p>
+
+        <div class="botoes">
+
+            <a
+                href="#projetos"
+                class="botao"
+            >
+
+                Ver meus projetos
+
+            </a>
+
+            <button
+                class="botao botao-secundario"
+                onclick="clicouBotao()"
+            >
+
+                Baixar CV
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================
+     SOBRE
+======================================== -->
+
+<section
+    id="sobre"
+    class="secao sobre"
+>
+
+    <div class="container">
+
+        <div class="sobre-grid">
+
+            <div class="sobre-texto">
+
+                <h2 class="titulo-secao">
+
+                    Sobre
+                    <span>mim</span>
+
+                </h2>
+
+                <p>
+
+                    Sou uma pessoa apaixonada por tecnologia
+                    e desenvolvimento de soluções digitais.
+
+                </p>
+
+                <p>
+
+                    Gosto de transformar ideias em experiências
+                    simples, funcionais e visualmente agradáveis.
+
+                </p>
+
+            </div>
+
+            <div class="destaques">
+
+                <div class="destaque">
+
+                    <span class="numero">
+                        3+
+                    </span>
+
+                    <p>
+                        Anos de experiência
+                    </p>
+
+                </div>
+
+                <div class="destaque">
+
+                    <span class="numero">
+                        10+
+                    </span>
+
+                    <p>
+                        Projetos realizados
+                    </p>
+
+                </div>
+
+                <div class="destaque">
+
+                    <span class="numero">
+                        100%
+                    </span>
+
+                    <p>
+                        Dedicação
+                    </p>
+
+                </div>
+
+                <div class="destaque">
+
+                    <span class="numero">
+                        ∞
+                    </span>
+
+                    <p>
+                        Vontade de aprender
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================
+     PROJETOS
+======================================== -->
+
+<section
+    id="projetos"
+    class="secao projetos"
+>
+
+    <div class="container">
+
+        <h2 class="titulo-secao">
+
+            Projetos
+            <span>em destaque</span>
+
+        </h2>
+
+        <p class="subtitulo">
+
+            Alguns trabalhos e experiências que fazem
+            parte da minha trajetória.
+
+        </p>
+
+        <div class="grid-projetos">
+
+            <article class="card">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY8K3bP2qvEFLLwwVvnHW112ZPX_7zyCqZ8fGoebOZdw&s=10"
+                    alt="Projeto Quick Store"
+                >
+
+                <div class="card-conteudo">
+
+                    <span class="tag">
+                        Front-end
+                    </span>
+
+                    <h3>
+                        Front-end da Quick-store
+                    </h3>
+
+                    <p>
+
+                        Interface moderna para uma loja virtual,
+                        com foco em usabilidade e organização.
+
+                    </p>
+
+                    <button
+                        class="botao"
+                        onclick="clicouBotao()"
+                    >
+
+                        Ver projeto
+
+                    </button>
+
+                </div>
+
+            </article>
+
+            <article class="card">
+
+                <img
+                    src="https://placehold.co/600x400/111827/38bdf8?text=Minecraft"
+                    alt="Projeto Minecraft"
+                >
+
+                <div class="card-conteudo">
+
+                    <span class="tag">
+                        Conceito
+                    </span>
+
+                    <h3>
+                        Site do Minecraft
+                    </h3>
+
+                    <p>
+
+                        Projeto demonstrativo utilizado
+                        como referência visual.
+
+                    </p>
+
+                    <button
+                        class="botao"
+                        onclick="clicouBotao()"
+                    >
+
+                        Ver projeto
+
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================
+     QUALIFICAÇÕES
+======================================== -->
+
+<section
+    id="quali"
+    class="secao qualificacoes"
+>
+
+    <div class="container">
+
+        <h2 class="titulo-secao">
+
+            Formação &
+            <span>qualificações</span>
+
+        </h2>
+
+        <p class="subtitulo">
+
+            Minha formação acadêmica e principais certificações.
+
+        </p>
+
+        <div class="timeline">
+
+            <article class="qualificacao">
+
+                <h3>
+
+                    Vazio
+
+                </h3>
+
+                <div class="instituicao">
+
+                    Vazio
+
+                </div>
+
+                <p>
+
+                    Vazio
+
+                </p>
+
+            </article>
+
+            <article class="qualificacao">
+
+                <h3>
+
+                    Vazio
+
+                </h3>
+
+                <div class="instituicao">
+
+                    Vazio
+
+                </div>
+
+                <p>
+
+                    Vazio
+                </p>
+
+            </article>
+
+            <article class="qualificacao">
+
+                <h3>
+                    Vazio
+
+                </h3>
+
+                <div class="instituicao">
+
+                    Vazio
+
+                </div>
+
+                <p>
+
+                    Vazio
+
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================
+     DEPOIMENTOS
+======================================== -->
+
+<section
+    id="depo"
+    class="secao depoimentos"
+>
+
+    <div class="container">
+
+        <h2 class="titulo-secao">
+
+            O que dizem
+            <span>sobre mim</span>
+
+        </h2>
+
+        <p class="subtitulo">
+
+            Feedbacks de pessoas com quem trabalhei.
+
+        </p>
+
+        <div class="grid-depoimentos">
+
+            <article class="depoimento">
+
+                <div class="aspas">
+                    “
+                </div>
+
+                <blockquote>
+
+                   Nada para informar.
+
+                </blockquote>
+
+                <strong>
+
+                    Vazio
+
+                </strong>
+
+                <small>
+
+                    Vazio
+
+                </small>
+
+            </article>
+
+            <article class="depoimento">
+
+                <div class="aspas">
+                    “
+                </div>
+
+                <blockquote>
+
+                    Vazio
+
+                </blockquote>
+
+                <strong>
+
+                    Vazio
+
+                </strong>
+
+                <small>
+
+                    Vazio
+
+                </small>
+
+            </article>
+
+            <article class="depoimento">
+
+                <div class="aspas">
+                    “
+                </div>
+
+                <blockquote>
+
+                    Vazio
+                </blockquote>
+
+                <strong>
+
+                    Vazio
+
+                </strong>
+
+                <small>
+
+                    Vazio
+
+                </small>
+
+            </article>
+
+            <article class="depoimento">
+
+                <div class="aspas">
+                    “
+                </div>
+
+                <blockquote>
+
+                    Vazio.
+                </blockquote>
+
+                <strong>
+
+                    Vazio.
+
+                </strong>
+
+                <small>
+
+                    Vazio.
+
+                </small>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================
+     CONTATO
+======================================== -->
+
+<section
+    id="contato"
+    class="secao contato"
+>
+
+    <div class="container">
+
+        <div class="contato-grid">
+
+            <div class="contato-info">
+
+                <h2 class="titulo-secao">
+
+                    Vamos trabalhar
+                    <span>juntos?</span>
+
+                </h2>
+
+                <p>
+
+                    Tem uma ideia, projeto ou oportunidade?
+                    Envie uma mensagem e vamos conversar.
+
+                </p>
+
+            </div>
+
+            <form
+                class="formulario"
+                onsubmit="enviarMsg(event)"
+            >
+
+                <div class="campo">
+
+                    <label for="inputNome">
+
+                        Nome
+
+                    </label>
+
+                    <input
+                        id="inputNome"
+                        type="text"
+                        placeholder="Seu nome"
+                        required
+                    >
+
+                </div>
+
+                <div class="campo">
+
+                    <label for="inputEmail">
+
+                        E-mail
+
+                    </label>
+
+                    <input
+                        id="inputEmail"
+                        type="email"
+                        placeholder="seuemail@exemplo.com"
+                        required
+                    >
+
+                </div>
+
+                <div class="campo">
+
+                    <label for="inputMsg">
+
+                        Mensagem
+
+                    </label>
+
+                    <textarea
+                        id="inputMsg"
+                        placeholder="Conte um pouco sobre seu projeto..."
+                        required
+                    ></textarea>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="botao"
+                >
+
+                    Enviar mensagem
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================
+     RODAPÉ
+======================================== -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        Alexandre Costa<span>.</span>
+
+    </div>
+
+    <p>
+
+        ©
+        <span id="ano"></span>
+        Alexandre Costa
+        Todos os direitos reservados.
+
+    </p>
+
+    <div class="redes">
+
+        <button
+            class="botao"
+            onclick="clicouBotao()"
+        >
+
+            GitHub
+
+        </button>
+
+        <button
+            class="botao"
+            onclick="clicouBotao()"
+        >
+
+            LinkedIn
+
+        </button>
+
+        <button
+            class="botao"
+            onclick="clicouBotao()"
+        >
+
+            Instagram
+
+        </button>
+
+    </div>
+
+</footer>
+
+<!-- ========================================
+     JAVASCRIPT
+======================================== -->
+
+<script>
+
+    function clicouBotao() {
+
+        alert(
+            "Link ainda não configurado."
+        );
+
+    }
+
+    function enviarMsg(event) {
+
+        event.preventDefault();
+
+        const nome =
+            document.getElementById(
+                "inputNome"
+            ).value;
+
+        const email =
+            document.getElementById(
+                "inputEmail"
+            ).value;
+
+        const mensagem =
+            document.getElementById(
+                "inputMsg"
+            ).value;
+
+        alert(
+
+            "Mensagem enviada por " +
+            nome +
+            ", e-mail " +
+            email +
+            ": " +
+            mensagem
+
+        );
+
+    }
+
+    document.getElementById(
+        "ano"
+    ).textContent =
+        new Date().getFullYear();
+
+</script>
+
+</body> </html>
